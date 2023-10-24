@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Rubik:wght@400;600&display=swap');
+
+:root {
+    --hue: 223;
+    /*--bg: linear-gradient(90deg, #4287f5, #a27bf6, #f266e0);
+    --fg: linear-gradient(90deg, #4287f5, #a27bf6, #f266e0);*/
+    --trans-dur: 0.3s;
+    --sidebar-width: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 500;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    
+    border-radius: 10px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid rgb(221, 255, 0);
+    background-color: rgba(251, 4, 4, 0.077);
+    color: rgb(244, 244, 249);
+    cursor: auto;
+}
+/* Sidebar styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background: #333; /* Sidebar background color */
+    color: white;
+    padding: 1rem;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-menu i {
+    margin-right: 0.5rem;
+  }
+  
+  .sidebar-menu li:hover {
+    background-color: #555; /* Hover background color */
+  }
+  /* Content styles */
+.content {
+    flex: 1; /* Take the remaining width */
+    padding: 1rem;
+  }
+.container {
+    display: flex;
+    flex-direction: row; /* Display the sections side by side */
+    min-height: 100vh;
+}
+
+.left-section {
+    width: 35%; /* Set the width of the left section to 25% */
+    background-color:#F4E7FB;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+.right-section {
+    width: 150%;
+    background: linear-gradient(90deg, #f6be8a, rgb(216, 221, 219), #92e089);
+    color: white; /* Text color */
+    overflow-y: scroll;
+    padding: 1rem;
+    border: 2px solid #fbf9f9; /* Add a border to the right container */
+    border-radius: 10px; /* Optional: Add border radius for a rounded look */
+    margin-bottom: 100px; /* Add a gap of 20px between the right container and the footer */
+}
+
+.left-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.left-menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left-menu i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.container::before {
+    content: '';
+    width: 406px;
+    height: 400px;
+    position: fixed;
+    top: -4rem;
+    left: -4rem;
+    background-color: #fb040400;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 40%;
+}
+
+.container::after {
+    content: '';
+    width: 406px;
+    height: 400px;
+    position: fixed;
+    bottom: -4rem;
+    right: -4rem;
+    background-color: #befffc03;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 40%;
+}
+
+
+
+/*video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    scale: 1.3;
+    opacity: 50%;
+}
+*/
+.desc {
+    margin: 0.6rem;
+    max-width: 650px;
+    width: 120%;
+    line-height: 1.5rem;
+}
+
+.result {
+    margin-top: 50px;
+    width: 100%;
+    padding: 5px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0 2rem 0;
+}
+
+#image-grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; /* Adjust the gap between images */
+    max-width: 50%;
+    align-items: center; /* Center content vertically */
+    justify-items: center; /* Center content horizontally */
+}
+
+
+#image-grid img {
+    max-width: 80%;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .4s ease;
+}
+
+#image-grid img:hover {
+    border-color: whitesmoke;
+    box-shadow: 0 0 15px white;
+}
+footer {
+    border-radius: 10px;
+    color: white;
+    position: fixed;
+    width: 60%;
+    bottom: 0px;
+     /* Adjusted left position to 0 */
+    right:10%;
+    padding: 1rem;
+    background: linear-gradient(90deg, #4759fb, #7176f0); /* Use your preferred gradient colors */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    z-index: 1; /* Ensure it's above other content */
+}
+
+footer h1 {
+    font-weight: 700;
+    color: #ff0000;
+    margin: 0;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Update your form and button styles */
+form.gen-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 10px 0 0 0; /* Adjust border radius for input */
+    color: white;
+    border-right: none;
+    background-color: transparent;
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 500;
+}
+
+form button {
+    color: white;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    padding: 1rem 2rem;
+    background: #7224b1;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 500;
+}
+
+
+form input::placeholder {
+    color: white;
+}
+
+.gen-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsive For Small Device's */
+@media screen and (max-width: 500px) {
+    #image-grid {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 100%;
+    }
+    form {
+        width: 100%;
+        flex-direction: column;
+    }
+    form input {
+        border: 1px solid white;
+        border-radius: 10px 10px 0px 0px;
+    }
+    form button {
+        border-radius: 0px 0px 10px 10px;
+        width: 100%;
+        border: 1px solid whitesmoke;
+    }
+    .container {
+        flex-direction: column;
+      }
+    
+      .sidebar {
+        width: 100%;
+        order: 2; /* Put the sidebar at the bottom in responsive mode */
+      }
+}
+/* Add this CSS for smaller screens */
+@media screen and (max-width: 500px) {
+    /* Modify the button's styling */
+    form button {
+        border-radius: 10px; /* Adjust border radius */
+        width: 100%; /* Make the button full width */
+        border: 1px solid whitesmoke;
+        padding: 1rem; /* Add some padding to the button */
+        margin-top: 10px; /* Add space between the input and button */
+        background: url('D:\image_generator_AI\ai-image-generator\src\assets\innovation.png') no-repeat;
+        background-size: cover; /* Adjust as needed */
+    .container {
+            flex-direction: column;
+          }
+        
+          .sidebar {
+            width: 100%;
+            order: 2; /* Put the sidebar at the bottom in responsive mode */
+          }
+    }
+}
+
+
+/* Loading Page */
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #010412;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 99999999999999;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+}
+
+.ip {
+    width: 16em;
+    height: 8em;
+}
+
+.ip__track {
+    stroke: hsl(var(--hue), 90%, 90%);
+    transition: stroke var(--trans-dur);
+}
+
+.ip__worm1,
+.ip__worm2 {
+    animation: worm1 1s linear infinite;
+}
+
+.ip__worm2 {
+    animation-name: worm2;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue), 90%, 5%);
+        --fg: hsl(var(--hue), 90%, 95%);
+    }
+    .ip__track {
+        stroke: hsl(var(--hue), 90%, 15%);
+    }
+}
+
+/* Animation */
+@keyframes worm1 {
+    from {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        animation-timing-function: steps(1);
+        stroke-dashoffset: -358;
+    }
+    50.01% {
+        animation-timing-function: linear;
+        stroke-dashoffset: 358;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes worm2 {
+    from {
+        stroke-dashoffset: 358;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: -358;
+    }
+}
