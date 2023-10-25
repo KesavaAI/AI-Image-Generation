@@ -1,4 +1,4 @@
-# Image_generator_AI
+#Generative Visions: AI Image Generation#
 its ongoing project ,still not complete.
 ---need development---
 1.login and registration validation 
