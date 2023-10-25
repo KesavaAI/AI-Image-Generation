@@ -1,4 +1,4 @@
-#Generative Visions: AI Image Generation#
+#Generative Visions: AI Image Generation using Hugging Face API key #
 its ongoing project ,still not complete.
 ---need development---
 1.login and registration validation 
