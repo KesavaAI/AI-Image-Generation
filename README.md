@@ -1,6 +1,8 @@
 #Generative Visions: AI Image Generation using Hugging Face API key #
+
 Output:
-![Screenshot (108)](https://github.com/KesavaAI/Generative-Visions-AI-Image-Generation/assets/144814421/c6309b38-cc10-47ab-ab08-5e5ae5485845)
+![Screenshot (108)](https://github.com/KesavaAI/Generative-Visions-AI-Image-Generation/assets/144814421/f76121f4-2e22-46e8-a178-521f65a3cb0e)
+
 
 its ongoing project ,still not complete.
 ---need development---
